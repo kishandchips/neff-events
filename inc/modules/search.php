@@ -43,7 +43,11 @@
 						<option value="" selected="selected">All Categories</option>
 						<?php if($tax_terms): ?>
 							<?php foreach ($tax_terms as $tax_term): ?>
-								<option value="<?php echo $tax_term->slug; ?>"><?php echo $tax_term->name; ?></option>
+								<?php 
+									$title = $tax_term->name;
+									$title = str_replace(array('[sup]', '[/sup]'), array('<sup>', '</sup>'), $title);
+								 ?>
+								<option value="<?php echo $tax_term->slug; ?>"><?php echo $title; ?></option>
 							<?php endforeach; ?>
 							</ul>
 						<?php endif; ?>				

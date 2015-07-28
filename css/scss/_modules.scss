@@ -156,6 +156,18 @@ nav.primary {
 	text-align: center;
 	@include box-shadow(0px 0px 10px #868686);
 	margin-bottom: 32px;
+	position: relative;
+
+	&:after {
+		content: '';
+		background: url(../images/logos/neff-logo-a.jpg) right top no-repeat;
+		display: block;
+		width: 150px;
+		height: 43px;
+		position: absolute;
+		right: 0;
+		top: 15px;
+	}
 
 	.site-title {
 		display: inline-block;
@@ -185,18 +197,21 @@ nav.primary {
 	@include clearfix;
 
 	li {
-		width: 33.33%;
+		width: 23%;
 		float: left;
 		background: url(../images/backgrounds/category-bg.png) center top no-repeat;
-		padding: 40px 30px;
+		padding: 30px 15px;
 		text-align: center;
 		min-height: 463px;
 		position: relative;
+		margin: 0 1%;
 
 		.title {
 			line-height: 0.7;
 			@include font-size(36);
 			margin-bottom: 22px;
+			min-height: 50px;
+
 		}
 
 		img {

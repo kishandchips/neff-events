@@ -981,7 +981,7 @@ select {
   position: relative; }
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     select {
-      padding-right: 40px;
+      padding-right: 37px;
       background: #FFF url(../images/misc/dropdown.png) no-repeat center right; } }
   select option {
     text-transform: none;

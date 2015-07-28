@@ -19,7 +19,7 @@ get_header();
 		    'orderby'           => 'date', 
 		    'order'             => 'DESC',
 		    'hide_empty'        => false, 
-		    'number'            => 3, 
+		    'number'            => 4, 
 		);		
 		$tax_terms = get_terms($taxonomy, $args);
 	?>
@@ -34,8 +34,11 @@ get_header();
 					$thumbnail_size = array('width' => 206, 'height' => 137);
 					$thumbnail = bfi_thumb($thumbnail_src, $thumbnail_size );
 					$term_link = get_term_link( $tax_term );
+					$name = $tax_term->name;
+					$title = str_replace(array('[sup]', '[/sup]'), array('<sup>', '</sup>'), $name);
+
 				?>
-				<h2 class="title"><?php echo $tax_term->name; ?></h2>
+				<h2 class="title"><?php echo $title; ?></h2>
 				<img src="<?php echo $thumbnail; ?>" title="<?php echo $tax_term->name; ?>">
 				<p><?php echo $tax_term->description; ?></p>
 				<a class="icon icon-chevron-right" href="<?php echo $term_link; ?>" title="<?php sprintf( __( "View all posts in %s" ), $tax_term->name ); ?>"></a>
