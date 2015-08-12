@@ -2,9 +2,16 @@
 $page_id = $post->ID;
 get_header(); ?>
 <div id="single" class="container">
+	<?php 
+		$title = ( get_field('header_title', $page_id ) ) ? get_field('header_title', $page_id ) : get_the_title( $page_id ); 
+		$logotype = ( get_field('header_logo_type', $page_id ) ) ? get_field('header_logo_type', $page_id ) : 'none';
+	?>
 	<?php include_module('header', array(
-		'page_id' => $page_id
+		'page_id' => $page_id,
+		'title' => $title,
+		'logotype' => $logotype
 	)); ?>	
+
 	<?php while ( have_posts() ) : the_post(); ?>
 		<div class="section">
 			<div class="content">
