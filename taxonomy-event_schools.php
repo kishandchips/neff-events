@@ -72,6 +72,17 @@
 				<?php echo $content; ?>
 				<h3 class="events"><?php _e('Events'); ?></h3>
 				<a class="circle-arrow-btn events-btn" href="#"><?php echo 'View ' . $term_name . ' Events'; ?></a>
+
+			    <?php 
+				    global $wp_query;
+					$args = array_merge( $wp_query->query_vars, array( 
+			           'meta_key' => 'event_start_date', //name of custom field
+			           'orderby' => 'meta_value_num', 
+			           'order' => 'ASC'
+					) );
+					query_posts( $args );
+				?>  	
+				
 				<?php if ( have_posts() ) : ?>
 					<div id="school-events">
 						<ul>

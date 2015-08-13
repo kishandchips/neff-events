@@ -61,11 +61,17 @@ get_header();
     <div class="event-list">
     	<ul>
     		<li>
-		    	<img src="<?php echo $image_url; ?>" alt="" class="image">
+    			<?php if ($image_url): ?>
+		    		<img src="<?php echo $image_url; ?>" alt="" class="image">
+		    	<?php endif; ?>
 		    	<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 		    	<p>
+		    		<?php 
+						$date = DateTime::createFromFormat('Ymd', get_field('event_start_date'));
+						$dateto = DateTime::createFromFormat('Ymd', get_field('event_end_date'));
+		    		 ?>						    			    	
 		    		<span><strong>City: </strong><?php the_field('location'); ?></span>	    		
-		    		<span><strong>Date: </strong><?php the_field('event_start_date'); ?><?php if(get_field('event_end_date')): ?> - <?php the_field('event_end_date'); ?><?php endif; ?></span>	    		
+		    		<span><strong>Date: </strong><?php echo $date->format('d-m-Y'); ?><?php if(get_field('event_end_date')): ?> - <?php echo $dateto->format('d-m-Y'); ?><?php endif; ?></span>	    		
 		    		<span><strong>Time: </strong><?php the_field('event_time'); ?></span>
 		    		<span><strong>Category: </strong>
 						<?php

@@ -241,7 +241,9 @@ nav.primary {
 			left: 46%;			
 
 			&:hover {
-				@include transform(rotate(360deg));
+			  -webkit-transform: rotate(360deg);  
+			      -ms-transform: rotate(360deg);  
+			          transform: rotate(360deg);				
 			}
 		}
 	}
