@@ -27,21 +27,23 @@ get_header();
 		<ul class="categories">
 		<?php foreach ($tax_terms as $tax_term): ?>
 			<li>
-				<?php
-					$taxonomy = $tax_term->taxonomy;
-					$term_id = $tax_term->term_id; 		
-					$thumbnail_src = get_field('category_image', $taxonomy . '_' . $term_id);
-					$thumbnail_size = array('width' => 206, 'height' => 137);
-					$thumbnail = bfi_thumb($thumbnail_src, $thumbnail_size );
-					$term_link = get_term_link( $tax_term );
-					$name = $tax_term->name;
-					$title = str_replace(array('[sup]', '[/sup]'), array('<sup>', '</sup>'), $name);
+				<div class="wrepp">
+					<?php
+						$taxonomy = $tax_term->taxonomy;
+						$term_id = $tax_term->term_id; 		
+						$thumbnail_src = get_field('category_image', $taxonomy . '_' . $term_id);
+						$thumbnail_size = array('width' => 206, 'height' => 137);
+						$thumbnail = bfi_thumb($thumbnail_src, $thumbnail_size );
+						$term_link = get_term_link( $tax_term );
+						$name = $tax_term->name;
+						$title = str_replace(array('[sup]', '[/sup]'), array('<sup>', '</sup>'), $name);
 
-				?>
-				<h2 class="title"><?php echo $title; ?></h2>
-				<img src="<?php echo $thumbnail; ?>" title="<?php echo $tax_term->name; ?>">
-				<p><?php echo $tax_term->description; ?></p>
-				<a class="icon icon-chevron-right" href="<?php echo $term_link; ?>" title="<?php sprintf( __( "View all posts in %s" ), $tax_term->name ); ?>"></a>
+					?>
+					<h2 class="title"><?php echo $title; ?></h2>
+					<img src="<?php echo $thumbnail; ?>" title="<?php echo $tax_term->name; ?>">
+					<p><?php echo $tax_term->description; ?></p>
+				</div>
+					<a class="" href="<?php echo $term_link; ?>" title="<?php sprintf( __( "View all posts in %s" ), $tax_term->name ); ?>"></a>
 			</li>
 		<?php endforeach; ?>
 		</ul>

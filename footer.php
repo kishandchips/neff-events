@@ -17,26 +17,22 @@
 
 <?php wp_footer(); ?>
 
+
 <div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/all.js"></script> 
+    <script type="text/javascript">
+
     FB.init({
-      appId      : '307567669413430',
-      status     : true,
-      xfbml      : true
+        appId: '730943577049540', 
+        status: true, 
+        cookie: true, 
+        xfbml: true
     });
-    FB.Canvas.setAutoGrow(500);
-    FB.Canvas.setAutoGrow(false);
-  };
- 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>	
+
+	FB.Canvas.setSize({height:700});
+	setTimeout("FB.Canvas.setAutoGrow()",500); 
+    </script>
+
 
 </body>
 </html>

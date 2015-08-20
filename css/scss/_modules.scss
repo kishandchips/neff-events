@@ -202,7 +202,7 @@ nav.primary {
 }
 
 .section {
-	padding: 0 20px;
+	padding: 0 15px;
 	@include clearfix;
 	position: relative;
 }
@@ -216,7 +216,7 @@ nav.primary {
 		background: url(../images/backgrounds/category-bg.png) center top no-repeat;
 		padding: 30px 15px;
 		text-align: center;
-		min-height: 463px;
+		height: 463px;
 		position: relative;
 		margin: 0 1%;
 
@@ -228,6 +228,11 @@ nav.primary {
 
 		}
 
+		p {
+			margin: 10px 0px;
+			@include font-size(12);
+		}
+
 		img {
 			border-bottom: 1px solid #c6c6c6;
 			padding-bottom: 19px;			
@@ -236,14 +241,18 @@ nav.primary {
 		a {
 			@include font-size(26);
 			color: $red;
-			position: absolute;
-			bottom: 27px;
-			left: 46%;			
+			display: block;
+			text-align: center;
+			width: 26px;
+			height: 27px;
+			background-image: url(../images/icons/circle-arrow.jpg);
+			display: block;
+			margin: 15px auto 0;
 
 			&:hover {
 			  -webkit-transform: rotate(360deg);  
 			      -ms-transform: rotate(360deg);  
-			          transform: rotate(360deg);				
+			          transform: rotate(360deg);
 			}
 		}
 	}

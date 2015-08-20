@@ -203,7 +203,7 @@
 
 			&.icon-fish-jump {
 				@include font-size(100);
-				top: 80px;
+				top: 30px;
 			}
 
 			&.icon-corn {
@@ -252,7 +252,8 @@
 			color: $red;
 			position: absolute;
 			@include transform(rotate(0deg));	  	
-		  	@include transition(all 0.3s ease);	  	
+		  	@include transition(all 0.3s ease);	
+		  	z-index: 500;  	
 		 
 		  	.image {
 				position: relative;
@@ -321,10 +322,12 @@
 			ul {
 				border: 1px solid $red;
 				margin: 1em 0;
-				padding: 1em 2em;	
+				padding: 1em 1em 1em 2em;
+				list-style-type: disc;	
 
 				 li {
 				 	list-style: initial;
+				 	font-size: 14px;
 				 }			
 			}
 		}
@@ -335,7 +338,8 @@
 		background: #FFF;
 		margin: 3em 0;
 		padding: 20px 32px;
-		position: relative;				
+		position: relative;	
+		@include clearfix;			
 
 		&:before {
 			position: absolute;
@@ -368,7 +372,9 @@
 		}
 
 		.inner {
-			width: 52%;
+			width: 100%;
+			@include clearfix;
+			min-height: 150px;
 	
 			p {
 				margin: 0;
@@ -387,23 +393,21 @@
 		}
 
 		.school-logo {
-			
-			position: absolute;
-			bottom: 25px;
-			right: 10px;
+			float: right;
+			 margin-top: 20px;
 		}
 
 		.illustration {
 			@include font-size(70);
 			position: absolute;
-			top: 70px;
+			bottom: 60px;
 			right: -280px;
 			z-index: 60;
 
 			&.icon-ravioli {
 				@include font-size(110);
-				right: -100px;
-				top: -20px;				
+				right: -150px;
+				bottom: 50px;
 			}
 
 
@@ -418,7 +422,8 @@
 
 			&.icon-strainer {
 				@include font-size(130);
-				top: 30px;
+				bottom: 50px;
+				left: 440px;
 				@include transform(rotate(-15deg));
 			}
 

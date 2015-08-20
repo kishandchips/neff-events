@@ -186,7 +186,7 @@ function custom_styles() {
 	global $wp_styles, $template_directory_uri;
 	
 	wp_enqueue_style( 'style', $template_directory_uri . '/css/style.css' );	
-	wp_dequeue_style('gforms_formsmain_css');
+	wp_dequeue_style('gforms_formsmain_css');	
 }
 
 function advanced_search_query( $query ) {

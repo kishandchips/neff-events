@@ -24,7 +24,9 @@ get_header(); ?>
 					?>			    								
 
 					<?php the_title( '<h1 class="title">', '</h1>'); ?>
-					<img src="<?php echo $image_url; ?>" alt="" class="image">
+					<?php if($image_url): ?>
+						<img src="<?php echo $image_url; ?>" alt="" class="image">
+					<?php endif; ?>
 					<div class="inner">
 						<?php the_content(); ?>
 					</div>

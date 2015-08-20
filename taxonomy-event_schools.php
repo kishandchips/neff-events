@@ -57,7 +57,7 @@
 			<div class="content">
 				<?php if($thumbnail): ?>
 					<?php 
-						$positions = Array('top', 'middle', 'bottom');
+						$positions = Array('top');
 						$position = $positions[array_rand($positions)];
 					 ?>					
 					<div class="thumbnail <?php echo $position; ?>">
@@ -110,11 +110,11 @@
 					<?php if($url): ?>
 						<a href="http://<?php echo $url; ?>" target="_blank"><?php echo $url; ?></a>
 					<?php endif; ?>
-				</div>
-				<?php if($logo): ?>
-					<img  class="school-logo" src="<?php echo $logo; ?>" alt="">
-				<?php endif; ?>		
+					<?php if($logo): ?>
+						<img  class="school-logo" src="<?php echo $logo; ?>" alt="">
+					<?php endif; ?>		
 
+				</div>
 				<?php 
 					$classes = Array('ravioli', 'leeks', 'rollpin', 'strainer', 'carrots');
 					$class = $classes[array_rand($classes)];
